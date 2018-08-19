@@ -9,8 +9,8 @@ from pygame import mixer
 greetings = ['hola', 'hello', 'hi','hey!','Hello','Hi']
 questions = ['how are you?','how are you doing?','how life is going on?','how you doing?']
 responses = ['I am good and you?','i am fine and you?']
-validations = ['yes','yeah','yea','no','nah','good','i am also good','i am also fine']
-verifications = ['are you sure?','you sure?','you sure?','sure?',"sure?"]
+validations = ['yes','yeah','yea','no','nah','good']
+verifications = ['are you sure?','you sure?','you sure?','sure?',"sure?","really"]
 
 CONVERSING = True
 
@@ -43,13 +43,13 @@ while CONVERSING:
 		random_response = random.choice(validations)
 		play(random_response)
 		print(">>>Python: " + random_response)
-	elif 'bye'or 'good bye' in userInput:
+	elif 'bye' in userInput:
  		random_response = "Bye take care !"
  		play(random_response)
  		print(">>>Python: " + random_response)
- 		print("Press enter to exit")
+ 		raw_input("Press enter to exit")
  		exit()
 	else:
 		response = "I am not able to understand you"
-		play(response,name)
+		play(response)
 		print(">>>Python: " + response)
